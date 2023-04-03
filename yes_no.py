@@ -1,16 +1,26 @@
+def yes_no(question):
+  valid = False
+  while not valid: 
+    response = input(question)
+  
+    # assess user response 
+    if response  == "yes" or response == "y":
+      response = "yes"
+      return response 
+  
+    elif response == "no" or response == "n":
+      response = "no"
+      return response
+    else:
+        print("Please enter yes or no")
+
+
 # loop for testing 
-while True: 
-  # Ask user if they have played before
-  show_instructions = input("Have you played Lucky Unicorn before? ").lower()
-  
-  # If  yes, output 'program continues'
-  if show_instructions == "yes" or show_instructions == "y":
-      print("Program continues")
-  
-  # If no output 'display instructions'
-  elif show_instructions== "no" or show_instructions == "n":
-      print("Display Instructions")
-  
+while True:
+  # calls function 
+  instructions = yes_no("Have you played before? ")
+  # show instructions if not played before 
+  if instructions == "no":
+    print("Display Instructions ")
   else:
-      print("Please enter yes or no")
-    
+    print("Program continues")
